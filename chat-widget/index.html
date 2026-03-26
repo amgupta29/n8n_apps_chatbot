@@ -497,7 +497,10 @@
     try {
       const res = await fetch(CHAT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'MY_SUPER_SECRET_KEY' // <-- Set your API key here
+        },
         body: JSON.stringify({ session_id: SESSION_ID, message: text })
       });
 
@@ -580,7 +583,10 @@
     try {
       const res = await fetch(UPLOAD_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'MY_SUPER_SECRET_KEY' // <-- Set your API key here
+        },
         body: JSON.stringify({
           session_id: SESSION_ID,
           file_base64: base64,
